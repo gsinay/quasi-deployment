@@ -1,0 +1,43 @@
+#userlog {
+    display: block;
+    width: 80px;
+    height: 40px;
+    background: rgb(57, 89, 246);
+    padding: center;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+#register {
+    display: block;
+    width: 130px;
+    height: 40px;
+    background: rgb(242, 244, 254);
+    padding: center;
+    text-align: center;
+    border-radius: 5px;
+    color: rgb(57, 89, 246);
+    font-weight: bold;
+    line-height: 25px;
+}
+
+#register-text{
+    color: rgb(57, 89, 246);
+}
+
+
+.right {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.burger {
+    
+    color: rgb(57, 89, 246);
+   
+}
+
+
