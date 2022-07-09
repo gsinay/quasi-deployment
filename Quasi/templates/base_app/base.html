@@ -25,6 +25,8 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'base_app:quasi' %}">Quasi</a>
             </li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'base_app:trauma' %}" >Seccion Traumajones</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'base_app:register' %}" >Seccion Youto</a></li>
             {% if user.is_authenticated %}
             <li class="nav-item"><a class="nav-link" href="{% url 'base_app:wall' %}">Wall</a></li>
             {% endif %}
@@ -35,8 +37,7 @@
               {% else %}
                 <li class="nav-item"><a class="nav-link"href="{% url 'base_app:login' %}">Login</a></li>
               {% endif %}
-                <li class="nav-item"> <a class="nav-link" href="{% url 'base_app:register' %}" >Register</a>
-              </li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'base_app:register' %}" >Register</a></li>
 
             </div>
 

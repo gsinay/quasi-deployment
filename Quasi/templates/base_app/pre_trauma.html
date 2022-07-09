@@ -1,0 +1,15 @@
+{% extends 'base_app/base.html' %}
+{% block body_block %}
+<div class="jumbotron jumbotron-fluid text-center">
+    <p>Para acceder a la sección traumajones, ingresa la clave ultraquasisecreta (Hint: globos)</p>
+    <form action="{% url 'base_app:trauma' %}" method="POST">
+        {% csrf_token %}
+        <label for="Clave"></label>
+        <input type="text" name="Clave" placeholder="Acá va la clave traumador">
+
+
+    </form>
+    
+</div>
+
+{% endblock %}

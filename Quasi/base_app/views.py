@@ -10,16 +10,16 @@ from django.contrib.auth import authenticate, login, logout
 def index(request):
     return render(request, "base_app/index.html")
 
-def register(request):
+def register(request): 
     registered = False
-    if request.method == "POST":
-        user_form = forms.UserForm(request.POST)
+    if request.method == "POST":  #CHECKING IF USER HAS SUBMITTED FORM
+        user_form = forms.UserForm(request.POST) #ASSIGNING ANSWER TO VARIABLES
         profile_form = forms.UserInfoForm(request.POST)
 
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
             user.set_password(user.password)
-            user.save()
+            user.save() #CREATING USER
 
             profile = profile_form.save(commit=False)
             profile.user = user
@@ -33,7 +33,7 @@ def register(request):
         else:
             print(user_form.errors, profile_form.errors)
     else:
-        user_form = forms.UserForm()
+        user_form = forms.UserForm() #IF USER HASN'T YET COMPLETED FORM, JUST SHOW THE HTML
         profile_form = forms.UserInfoForm()
 
     return render(request, "base_app/register.html", {"user_form" : user_form, "profile_form" : profile_form, "registered" : registered})
@@ -68,3 +68,16 @@ def user_logout(request):
 @login_required()
 def wall(request):
     return render(request, 'base_app/wall.html')
+
+def trauma(request):
+    if request.method == "POST":
+        clave = request.POST.get("Clave")
+        if clave.lower() == "marsexo":
+            return render(request, 'base_app/buen_trauma.html', {})
+        else:
+            return render(request, 'base_app/mal_trauma.html', {})
+    else:
+        return render(request, 'base_app/pre_trauma.html', {})
+
+
+    

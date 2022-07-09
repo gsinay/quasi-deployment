@@ -18,3 +18,4 @@ class UserInfoForm(forms.ModelForm):
         model = UserProfileinfo
         fields = ('date_of_birth', 'profile_pic')
 
+
