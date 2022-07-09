@@ -67,6 +67,7 @@ def user_logout(request):
 def wall(request):
     return render(request, 'base_app/wall.html')
 
+@login_required
 def trauma(request):
     if request.method == "POST":
         clave = request.POST.get("Clave")
