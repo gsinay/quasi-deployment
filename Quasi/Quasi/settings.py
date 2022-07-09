@@ -29,7 +29,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, "media")
 SECRET_KEY = '*rwpp&!3+%vtil_txz5-9bt5zp63oagvy-p$)aldi$7(y*rbpc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["quasinay.herokuapp.com", "127.0.0.1",]
 
