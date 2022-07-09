@@ -38,8 +38,6 @@ def register(request):
 
     return render(request, "base_app/register.html", {"user_form" : user_form, "profile_form" : profile_form, "registered" : registered})
 
-def quasi(request):
-    return render(request, "base_app/quasi.html")
 
 def user_login(request):
     if request.method == "POST":
@@ -78,6 +76,21 @@ def trauma(request):
             return render(request, 'base_app/mal_trauma.html', {})
     else:
         return render(request, 'base_app/pre_trauma.html', {})
+
+def feedback_form(request):
+    if request.method == "POST":
+        form = forms.FeedbackForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return render(request, "base_app/thanks.html")
+    else:
+        form = forms.FeedbackForm()
+        return render(request, "base_app/feedback.html", {"form" : form})
+def youto(request):
+    return render(request, "base_app/Pre_youto", {})
+
+
 
 
     

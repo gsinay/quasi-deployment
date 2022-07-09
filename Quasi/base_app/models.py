@@ -8,6 +8,15 @@ class UserProfileinfo(models.Model):
 
     def __str__(self):
         return self.user.username
+class Feedback(models.Model):
+    name = models.CharField(max_length=120)
+    details = models.TextField()
+    happy = models.BooleanField()
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
 
 
 

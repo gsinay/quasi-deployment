@@ -1,7 +1,7 @@
 
 from django import forms
 from django.contrib.auth.models import User
-from base_app.models import UserProfileinfo
+from base_app.models import UserProfileinfo, Feedback
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -18,4 +18,8 @@ class UserInfoForm(forms.ModelForm):
         model = UserProfileinfo
         fields = ('date_of_birth', 'profile_pic')
 
+class FeedbackForm(forms.ModelForm):
+    class Meta():
+        model = Feedback
+        exclude = []
 
