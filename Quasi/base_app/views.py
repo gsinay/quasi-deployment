@@ -77,7 +77,7 @@ def trauma(request):
             return render(request, 'base_app/mal_trauma.html', {})
     else:
         return render(request, 'base_app/pre_trauma.html', {})
-
+@login_required
 def feedback_form(request):
     if request.method == "POST":
         form = forms.FeedbackForm(request.POST)
