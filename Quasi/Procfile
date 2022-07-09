@@ -1,1 +1,1 @@
-web: gunicorn Quasi.wsgi --log-file -
+web: gunicorn Quasi.wsgi 
