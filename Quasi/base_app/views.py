@@ -78,6 +78,16 @@ def trauma(request):
     else:
         return render(request, 'base_app/pre_trauma.html', {})
 @login_required
+def youto(request):
+    if request.method == "POST":
+        clave = request.POST.get("Clave")
+        if clave.lower() == "espaldicep":
+            return render(request, 'base_app/buen_youto.html', {})
+        else:
+            return HttpResponse("Fallaste <b>guaton qlo</b>. Trata denuevo. Anda a la pagina anterior y ponte vivo")
+    else:
+        return render(request, 'base_app/pre_youto.html', {})
+@login_required
 def feedback_form(request):
     if request.method == "POST":
         form = forms.FeedbackForm(request.POST)
@@ -88,8 +98,6 @@ def feedback_form(request):
     else:
         form = forms.FeedbackForm()
         return render(request, "base_app/feedback.html", {"form" : form})
-def youto(request):
-    return render(request, "base_app/Pre_youto", {})
 
 
 
